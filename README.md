@@ -5,7 +5,7 @@
 Приложение позволяет управлять в airflow процессом репликации данных из postgres в mysql при помощи spark. Данные в постгрес можно дополнить при помощи генерации и записи через брокер Kafka.
 
 ---
-## 2. Команды для запуска 1<a id=2></a>
+## 2. Команды для запуска <a id=2></a>
 
 Перед запуском необходимо склонировать проект:
 ```bash
@@ -27,7 +27,7 @@ docker compose up
 
 Cоздать и активировать виртуальное окружение:
 ```bash
-python -m venv venv
+python3 -m venv venv
 ```
 
 ```bash
@@ -42,26 +42,26 @@ python3 -m pip install --upgrade pip
 pip install -r req.txt
 ```
 
-## 2. Airflow 1<a id=2></a>
+## 2. Airflow <a id=2></a>
 
 Вход расположен по адресу: http://localhost:8081/.
 Используйте следующие учетные данные для входа:
 
 ## Описание DAGs
 
-# 1. initial_migration
+# initial_migration
 
 Запускается для инициализации таблиц и данных в БД.
 
-# 2. replicate
+# replicate
 
 Запускается для репликации данных из postgress в mysql (данные в postgress закачиваются на предыдущем этапе и kafka).
 
-# 3. mart
+# mart
 
 Запускается для создания витрины данных.
 
-## Аналитическая витрина 1<a id=2></a>
+## Аналитическая витрина <a id=2></a>
 
 # Описание
 
@@ -84,8 +84,9 @@ pip install -r req.txt
 
 
 ## SQL код
-```sql 
- SELECT
+```sql
+CREATE TABLE data_mart AS 
+SELECT
     o.order_id,
     o.total_amount AS order_total,
     o.status,
