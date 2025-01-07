@@ -20,14 +20,12 @@ TABLES = ['users', 'productCategories', 'products', 'orders', 'orderDetails']
 
 
 def replicate():
-    print('aaaa')
     spark = SparkSession \
         .builder \
         .appName("Python Spark SQL basic example") \
         .config("spark.jars", "/opt/airflow/dags/postgresql-42.7.3.jar, /opt/airflow/dags/mysql-connector-java-8.0.13.jar") \
         .getOrCreate()
 
-    print(123123)
     for table in TABLES:
 
         df = spark.read.\
