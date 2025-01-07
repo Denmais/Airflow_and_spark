@@ -130,6 +130,8 @@ select
     order_id,
     full_name,
     row_number() over(partition by full_name order by full_name) 
-from data_mart 
-order by full_name;
+from
+    data_mart 
+order by
+    full_name;
 ```
