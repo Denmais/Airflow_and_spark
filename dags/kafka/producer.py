@@ -19,7 +19,6 @@ def push():
     user = randrange(1, 5, 1)
     amount = randrange(1, 4000)
     status = choices(['Done', 'Created', 'Completed', 'Deleted'])
-    print(status[0])
 
     producer.send(topic, value={'user_id': user, 'total_amount': amount, 'status': status[0]})
     sleep(10)
