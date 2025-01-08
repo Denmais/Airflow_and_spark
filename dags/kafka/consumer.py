@@ -6,9 +6,9 @@ import sys
 
 # Параметры подключения к Kafka
 bootstrap_servers = 'localhost:9092'
-topic = 'spark-topic'  # Название темы, из которой читаем сообщения!
+topic = 'spark-topic' 
 
-# Параметры подключения к PostgreSQL
+
 db_host = 'localhost'
 db_port = '5002'
 db_name = 'mydb'

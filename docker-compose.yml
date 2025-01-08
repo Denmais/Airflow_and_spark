@@ -92,7 +92,7 @@ services:
       - "8081:8080"
     command: "webserver"
     volumes:
-      - ./dags:/opt/airflow/dags  # Mount local DAGs directory
+      - ./dags:/opt/airflow/dags
   airflow-scheduler:
     image: airflow
     container_name: airflow-scheduler
@@ -106,7 +106,7 @@ services:
 
     command: "scheduler"
     volumes:
-      - ./dags:/opt/airflow/dags  # Mount local DAGs directory
+      - ./dags:/opt/airflow/dags
 volumes:
   pg_data:
   kafka-data:
