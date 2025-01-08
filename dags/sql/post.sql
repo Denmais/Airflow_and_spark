@@ -44,13 +44,13 @@ CREATE TABLE if not exists orderDetails (
     total_price NUMERIC DEFAULT 100
 );
 
-
+-- Генератор гпт
 INSERT INTO users (first_name, last_name, email, phone, loyalty_status) VALUES
 ('John', 'Doe', 'john.doe@example.com', '+1234567890', 'Gold'),
 ('Jane', 'Smith', 'jane.smith@example.com', '+0987654321', 'Silver'),
 ('Alice', 'Johnson', 'michael.johnson@example.com', '+1122334455', 'Gold'),
-('Bob', 'Davis', 'emily.davis@example.com', '+2233445566', 'Gold'),
-('Carol', 'Brown', 'william.brown@example.com', '+3344556677', 'Silver');
+('Emily', 'Davis', 'emily.davis@example.com', '+2233445566', 'Gold'),
+('William', 'Brown', 'william.brown@example.com', '+3344556677', 'Silver');
 
 
 INSERT INTO productCategories (name, parent_category_id) VALUES
@@ -71,20 +71,20 @@ INSERT INTO products (name, description, category_id, price, stock_quantity) VAL
 
 
 INSERT INTO orders (user_id, total_amount, status, delivery_date) VALUES
-(1, 2999.97, 'Completed', '2023-12-25'),
+(1, 2999.99, 'Completed', '2023-12-21'),
 (2, 9199.99, 'Done', NULL),
-(3, 2499.99, 'Created', '2023-12-20'),
-(4, 3799.98, 'Deleted', NULL),
-(5, 299.99, 'Completed', '2023-12-18');
+(3, 2499.99, 'Created', NULL),
+(4, 3799.99, 'Deleted', NULL),
+(5, 2919.99, 'Completed', '2023-12-1');
 
 
 INSERT INTO orderDetails (order_id, product_id, quantity, price_per_unit) VALUES
-(1, 2, 1, 999.99),
-(1, 1, 1, 1999.99),
-(2, 1, 1, 9399.99),
-(3, 4, 1, 1499.99),
-(4, 3, 1, 459.99),
-(4, 6, 2, 139.99),
-(5, 5, 1, 329.99);
+(1, 1, 1, 999.99),
+(1, 2, 1, 6999.99),
+(2, 1, 1, 999.99),
+(3, 3, 1, 599.99),
+(4, 4, 1, 4592.99),
+(4, 6, 2, 1391.99),
+(5, 5, 1, 3333.99);
 
 COMMIT;
