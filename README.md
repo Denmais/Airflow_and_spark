@@ -135,3 +135,26 @@ from
 order by
     full_name;
 ```
+
+Процентное отображение заказов пользователей разных лояльных статусов от общего количества.
+
+```sql
+select
+    loyalty_status, 
+    count(loyalty_status)/(select count(*) from data_mart)*100 
+from 
+    data_mart 
+group by 
+    loyalty_status;
+```
+
+Данные о заказах и их суммах относительно средней стоимости заказов во всей витрине
+
+```sql
+select 
+    order_id, 
+    order_total, 
+    avg(order_total) over () as total 
+from 
+    data_mart;
+```
